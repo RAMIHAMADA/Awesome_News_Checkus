@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "261882250279",
+    "project_id": "info-app-e43db",
+    "storage_bucket": "info-app-e43db.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:261882250279:android:10b7e2f15aa4d8b01f3a02",
+        "android_client_info": {
+          "package_name": "com.awesomenews.checkus"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "261882250279-o5o165n46njocu8i2kg4if4a463vlm5v.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDF9QcMf2NrwnpdB09U6oAfPKWdemZcwKA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "261882250279-o5o165n46njocu8i2kg4if4a463vlm5v.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
