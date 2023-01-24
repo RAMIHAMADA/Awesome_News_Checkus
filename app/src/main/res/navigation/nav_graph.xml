@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/detailsNewsFragment">
+
+    <fragment
+        android:id="@+id/detailsNewsFragment"
+        android:name="com.awesomenews.checkus.ui.details.news.DetailsNewsFragment"
+        android:label="fragment_details_news"
+        tools:layout="@layout/fragment_details_news" />
+    <fragment
+        android:id="@+id/mainScreenFragment"
+        android:name="com.awesomenews.checkus.ui.main.screen.MainScreenFragment"
+        android:label="fragment_main_screen"
+        tools:layout="@layout/fragment_main_screen" >
+        <action
+            android:id="@+id/action_mainScreenFragment_to_listOfAllNewsFragment"
+            app:destination="@id/listOfAllNewsFragment"
+            app:enterAnim="@android:anim/slide_out_right"
+            app:exitAnim="@android:anim/slide_out_right"
+            app:popEnterAnim="@android:anim/slide_in_left"
+            app:popExitAnim="@android:anim/slide_out_right" />
+        <action
+            android:id="@+id/action_mainScreenFragment_to_detailsNewsFragment"
+            app:destination="@id/detailsNewsFragment"
+            app:enterAnim="@android:anim/slide_out_right"
+            app:exitAnim="@android:anim/slide_out_right"
+            app:popEnterAnim="@android:anim/slide_in_left"
+            app:popExitAnim="@android:anim/slide_out_right" />
+        <action
+            android:id="@+id/action_mainScreenFragment_to_newsTopicsFragment"
+            app:destination="@id/newsTopicsFragment"
+            app:enterAnim="@android:anim/slide_out_right"
+            app:exitAnim="@android:anim/slide_out_right"
+            app:popEnterAnim="@android:anim/slide_in_left"
+            app:popExitAnim="@android:anim/slide_out_right" />
+    </fragment>
+    <fragment
+        android:id="@+id/listOfAllNewsFragment"
+        android:name="com.awesomenews.checkus.ui.list.of.all.news.ListOfAllNewsFragment"
+        android:label="fragment_list_of_all_news"
+        tools:layout="@layout/fragment_list_of_all_news" >
+        <action
+            android:id="@+id/action_listOfAllNewsFragment_to_detailsNewsFragment"
+            app:destination="@id/detailsNewsFragment"
+            app:enterAnim="@android:anim/slide_out_right"
+            app:exitAnim="@android:anim/slide_out_right"
+            app:popEnterAnim="@android:anim/slide_in_left"
+            app:popExitAnim="@android:anim/slide_out_right" />
+    </fragment>
+    <fragment
+        android:id="@+id/newsTopicsFragment"
+        android:name="com.awesomenews.checkus.ui.news.topics.NewsTopicsFragment"
+        android:label="fragment_news_topics"
+        tools:layout="@layout/fragment_news_topics" >
+        <action
+            android:id="@+id/action_newsTopicsFragment_to_detailsNewsFragment"
+            app:destination="@id/detailsNewsFragment"
+            app:enterAnim="@android:anim/slide_out_right"
+            app:exitAnim="@android:anim/slide_out_right"
+            app:popEnterAnim="@android:anim/slide_in_left"
+            app:popExitAnim="@android:anim/slide_out_right" />
+        <action
+            android:id="@+id/action_newsTopicsFragment_to_listOfAllNewsFragment"
+            app:destination="@id/listOfAllNewsFragment"
+            app:enterAnim="@android:anim/slide_out_right"
+            app:exitAnim="@android:anim/slide_out_right"
+            app:popEnterAnim="@android:anim/slide_in_left"
+            app:popExitAnim="@android:anim/slide_out_right" />
+    </fragment>
+</navigation>
