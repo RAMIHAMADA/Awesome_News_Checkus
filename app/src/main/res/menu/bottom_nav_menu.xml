@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:id="@+id/mainScreenFragment"
+        android:title="Главная"
+        android:icon="@drawable/ic_main_screen_bottom_nav_menu"/>
+    <item android:id="@+id/newsTopicsFragment"
+        android:title="Разделы"
+        android:icon="@drawable/ic_news_topics_bottom_nav_menu"/>
+
+</menu>
