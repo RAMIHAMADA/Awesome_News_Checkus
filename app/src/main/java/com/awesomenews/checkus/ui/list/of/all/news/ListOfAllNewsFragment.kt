@@ -1,11 +1,10 @@
 package com.awesomenews.checkus.ui.list.of.all.news
 
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import com.awesomenews.checkus.R
+import androidx.fragment.app.Fragment
 import com.awesomenews.checkus.databinding.FragmentListOfAllNewsBinding
 
 class ListOfAllNewsFragment : Fragment(){
@@ -14,9 +13,13 @@ class ListOfAllNewsFragment : Fragment(){
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
+    ): View {
         _binding = FragmentListOfAllNewsBinding.inflate(layoutInflater, container, false)
         return binding.root
+    }
+    override fun onDestroyView() {
+        super.onDestroyView()
+        _binding = null
     }
 
 }
