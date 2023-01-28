@@ -12,12 +12,11 @@
         android:label="fragment_splash"
         tools:layout="@layout/fragment_splash" >
         <action
-            android:id="@+id/action_splashFragment_to_blankFragment"
-            app:destination="@id/blankFragment" />
+            android:id="@+id/action_splashFragment_to_newTabsFragment"
+            app:destination="@id/newTabsFragment" />
     </fragment>
     <fragment
-        android:id="@+id/blankFragment"
-        android:name="com.awesomenews.checkus.ui.BlankFragment"
-        android:label="fragment_blank"
-        tools:layout="@layout/fragment_blank" />
+        android:id="@+id/newTabsFragment"
+        android:name="com.awesomenews.checkus.ui.NewTabsFragment"
+        android:label="NewTabsFragment" />
 </navigation>

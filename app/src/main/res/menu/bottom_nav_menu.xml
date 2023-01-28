@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
-    <item android:id="@+id/mainScreenFragment"
+    <item android:id="@+id/main_screen"
         android:title="@string/main_screan"
         android:icon="@drawable/ic_main_screen_bottom_nav"/>
-    <item android:id="@+id/newsTopicsFragment"
+    <item android:id="@+id/new_topics"
         android:title="@string/news_topics"
         android:icon="@drawable/ic_news_topics_bottom_nav"/>
 

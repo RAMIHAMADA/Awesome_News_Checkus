@@ -30,8 +30,8 @@ class SplashFragment : Fragment() {
 
     private fun navigateNext() {
         CoroutineScope(Dispatchers.Main).launch {
-//            delay(1000)
-            findNavController().navigate(R.id.action_splashFragment_to_blankFragment)
+            delay(5000)
+            findNavController().navigate(R.id.action_splashFragment_to_newTabsFragment)
         }
 
     }
