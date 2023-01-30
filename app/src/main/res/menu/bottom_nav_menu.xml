@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
     <item android:id="@+id/main_screen"
-        android:title="@string/main_screan"
+        android:title="@string/main_screen_bottom_nav_menu"
         android:icon="@drawable/ic_main_screen_bottom_nav"/>
     <item android:id="@+id/new_topics"
-        android:title="@string/news_topics"
+        android:title="@string/news_topics_bottom_nav_menu"
         android:icon="@drawable/ic_news_topics_bottom_nav"/>
 
 </menu>

@@ -3,6 +3,9 @@
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="news">News</string>
-    <string name="main_screan">Главная</string>
-    <string name="news_topics">Разделы</string>
+    <string name="back_arrow_text">Назад</string>
+    <string name="main_screen_text">Главная</string>
+    <string name="news_topics_text">Разделы</string>
+    <string name="main_screen_bottom_nav_menu">Главная</string>
+    <string name="news_topics_bottom_nav_menu">Разделы</string>
 </resources>
