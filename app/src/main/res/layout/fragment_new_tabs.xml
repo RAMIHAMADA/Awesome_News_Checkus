@@ -9,12 +9,13 @@
         android:name="androidx.navigation.fragment.NavHostFragment"
         android:layout_width="0dp"
         android:layout_height="0dp"
+        android:background="@color/greyForFragment"
         app:defaultNavHost="true"
         app:layout_constraintBottom_toTopOf="@id/bottom_nav_menu"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:navGraph="@navigation/new_tabs_graph" />
+        app:navGraph="@navigation/new_tabs_graph"/>
 
 
     <com.google.android.material.bottomnavigation.BottomNavigationView

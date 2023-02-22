@@ -17,8 +17,8 @@ class ListOfAllNewsFragment : Fragment(){
         _binding = FragmentListOfAllNewsBinding.inflate(layoutInflater, container, false)
         return binding.root
     }
-    override fun onDestroyView() {
-        super.onDestroyView()
+    override fun onDestroy() {
+        super.onDestroy()
         _binding = null
     }
 

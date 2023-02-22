@@ -26,6 +26,7 @@ class NewTabsFragment: Fragment() {
         super.onViewCreated(view, savedInstanceState)
         initNavigation()
     }
+
     private fun initNavigation(){
         val navHost=
             childFragmentManager.findFragmentById(R.id.new_tabs_fragment_container) as NavHostFragment

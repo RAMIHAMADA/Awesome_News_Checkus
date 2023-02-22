@@ -1,34 +1,118 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    tools:context=".ui.details.news.DetailsNewsFragment">
-    <Toolbar
-        android:id="@+id/tool_bar_details"
+    android:background="@color/greyForFragment"
+    tools:context=".ui.details.news.DetailsNewsFragment"
+    tools:ignore="ExtraText">
+
+
+    <View
+        android:id="@+id/view_layout_details"
         android:layout_width="match_parent"
         android:layout_height="50dp"
-        app:layout_constraintStart_toStartOf="parent"
+        android:background="@color/white"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        android:background="@color/white">
-        <TextView
-            android:id="@+id/main_screen_text"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+    </View>
+
+    <ImageView
+        android:id="@+id/arrow_back_iv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:src="@drawable/ic_arrow_backward"
+        app:layout_constraintBottom_toBottomOf="@id/view_layout_details"
+        app:layout_constraintStart_toStartOf="@id/view_layout_details"
+        app:layout_constraintTop_toTopOf="@id/view_layout_details" />
+
+    <View
+        android:id="@+id/background_for_arrow_v"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        app:layout_constraintBottom_toBottomOf="@id/arrow_back_iv"
+        app:layout_constraintEnd_toEndOf="@id/arrow_back_iv"
+        app:layout_constraintStart_toStartOf="@id/arrow_back_iv"
+        app:layout_constraintTop_toTopOf="@id/arrow_back_iv" />
+
+    <TextView
+        android:id="@+id/main_screen_text_tv"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:background="@color/white"
+        android:text="@string/back_arrow_text"
+        android:textColor="@color/black"
+        android:textSize="24dp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@id/view_layout_details"
+        app:layout_constraintEnd_toEndOf="@id/view_layout_details"
+        app:layout_constraintStart_toEndOf="@id/arrow_back_iv"
+        app:layout_constraintTop_toTopOf="@id/view_layout_details" />
+
+
+
+        <ImageView
+            android:id="@+id/detalis_news_fragment_iv"
             android:layout_width="match_parent"
-            android:layout_height="50dp"
-            android:background="@color/white"
-            android:layout_marginTop="11dp"
-            android:layout_marginBottom="17dp"
-            android:layout_marginStart="16dp"
-            android:textColor="@color/black"
+            android:layout_height="200dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/view_layout_details"
+            tools:src="@drawable/ic_news_download" />
+
+        <TextView
+            android:id="@+id/title_detalis_fragment_tv"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_margin="16dp"
+            android:layout_marginTop="20dp"
+            android:text="Tут будет текст жоский"
+            android:textColor="@color/primary_title"
             android:textSize="24dp"
-            android:text="@string/back_arrow_text"
-            android:textStyle="bold"
-            app:layout_constraintEnd_toEndOf="@id/tool_bar_details"
-            app:layout_constraintStart_toStartOf="@id/tool_bar_details"
-            app:layout_constraintTop_toTopOf="@id/tool_bar_details" />
-    </Toolbar>
+            android:textStyle="normal"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/detalis_news_fragment_iv" />
+
+        <TextView
+            android:id="@+id/date_detalis_fragment_tv"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_margin="16dp"
+            android:textColor="@color/grey_date"
+            android:textSize="12dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/title_detalis_fragment_tv"
+            tools:text="01.02.2023" />
+
+        <com.google.android.material.divider.MaterialDivider
+            android:id="@+id/divider_line_material"
+            android:layout_width="wrap_content"
+            android:layout_height="0dp"
+            android:background="@color/grey_material_divider"
+            android:orientation="horizontal"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/date_detalis_fragment_tv" />
 
 
+        <TextView
+            android:id="@+id/text_detalis_news_fragment"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_margin="16dp"
+            android:scrollbars="vertical"
+            android:textColor="@color/black"
+            android:textSize="16dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/divider_line_material"
+            tools:text="Тут будет много текста" />
+
+ 
 </androidx.constraintlayout.widget.ConstraintLayout>

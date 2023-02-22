@@ -27,7 +27,8 @@ class SplashFragment : Fragment() {
         navigateNext()
     }
 
-
+    //Навигация после SplashFragment мы переходим на на NewTubsFragment,
+    // так-же сплешь будет длиться 5 секунд
     private fun navigateNext() {
         CoroutineScope(Dispatchers.Main).launch {
             delay(5000)
