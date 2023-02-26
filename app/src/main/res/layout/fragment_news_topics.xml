@@ -6,30 +6,30 @@
     android:layout_height="match_parent"
     tools:context=".ui.main.screen.MainScreenFragment">
 
-    <FrameLayout
-        android:id="@+id/top_container_for_name_ic"
+    <View
+        android:id="@+id/view_container_for_name_ic"
         android:layout_width="match_parent"
         android:layout_height="50dp"
         android:background="@color/white"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
+    </View>
 
-        <TextView
-            android:id="@+id/main_screen_text"
-            android:layout_width="match_parent"
-            android:layout_height="50dp"
-            android:layout_marginStart="16dp"
-            android:layout_marginTop="11dp"
-            android:layout_marginBottom="17dp"
-            android:background="@color/white"
-            android:text="@string/news_topics_text"
-            android:textColor="@color/black"
-            android:textSize="24dp"
-            android:textStyle="bold"
-            app:layout_constraintEnd_toEndOf="@id/top_container_for_name_ic"
-            app:layout_constraintStart_toStartOf="@id/top_container_for_name_ic"
-            app:layout_constraintTop_toTopOf="@id/top_container_for_name_ic" />
+    <TextView
+        android:id="@+id/main_screen_text"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="11dp"
+        android:layout_marginBottom="17dp"
+        android:background="@color/white"
+        android:text="@string/news_topics_text"
+        android:textColor="@color/black"
+        android:textSize="24dp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="@id/view_container_for_name_ic"
+        app:layout_constraintStart_toStartOf="@id/view_container_for_name_ic"
+        app:layout_constraintTop_toTopOf="@id/view_container_for_name_ic" />
 
-    </FrameLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

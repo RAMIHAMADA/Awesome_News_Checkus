@@ -55,64 +55,68 @@
         app:layout_constraintTop_toTopOf="@id/view_layout_details" />
 
 
+    <ImageView
+        android:id="@+id/detalis_news_fragment_iv"
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/view_layout_details"
+        tools:src="@drawable/ic_news_download" />
 
-        <ImageView
-            android:id="@+id/detalis_news_fragment_iv"
-            android:layout_width="match_parent"
-            android:layout_height="200dp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/view_layout_details"
-            tools:src="@drawable/ic_news_download" />
+    <TextView
+        android:id="@+id/title_detalis_fragment_tv"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_margin="16dp"
+        android:layout_marginTop="20dp"
+        android:text="Tут будет текст жоский"
+        android:textColor="@color/primary_title"
+        android:textSize="24dp"
+        android:textStyle="normal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/detalis_news_fragment_iv" />
 
-        <TextView
-            android:id="@+id/title_detalis_fragment_tv"
-            android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:layout_margin="16dp"
-            android:layout_marginTop="20dp"
-            android:text="Tут будет текст жоский"
-            android:textColor="@color/primary_title"
-            android:textSize="24dp"
-            android:textStyle="normal"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/detalis_news_fragment_iv" />
+    <TextView
+        android:id="@+id/date_detalis_fragment_tv"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_margin="16dp"
+        android:textColor="@color/grey_date"
+        android:textSize="12dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/title_detalis_fragment_tv"
+        tools:text="01.02.2023" />
 
-        <TextView
-            android:id="@+id/date_detalis_fragment_tv"
-            android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:layout_margin="16dp"
-            android:textColor="@color/grey_date"
-            android:textSize="12dp"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/title_detalis_fragment_tv"
-            tools:text="01.02.2023" />
+    <com.google.android.material.divider.MaterialDivider
+        android:id="@+id/divider_line_material"
+        android:layout_width="wrap_content"
+        android:layout_height="0dp"
+        android:background="@color/grey_material_divider"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/date_detalis_fragment_tv" />
 
-        <com.google.android.material.divider.MaterialDivider
-            android:id="@+id/divider_line_material"
-            android:layout_width="wrap_content"
-            android:layout_height="0dp"
-            android:background="@color/grey_material_divider"
-            android:orientation="horizontal"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/date_detalis_fragment_tv" />
-
-
-        <TextView
-            android:id="@+id/text_detalis_news_fragment"
-            android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:layout_margin="16dp"
-            android:scrollbars="vertical"
-            android:textColor="@color/black"
-            android:textSize="16dp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/divider_line_material"
-            tools:text="Тут будет много текста" />
-
- 
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/divider_line_material"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent">
+    <TextView
+        android:id="@+id/text_detalis_news_fragment"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_margin="16dp"
+        android:scrollbars="vertical"
+        android:textColor="@color/black"
+        android:textSize="16dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/divider_line_material"
+        tools:text="Тут будет много текста" />
+</androidx.core.widget.NestedScrollView>
 </androidx.constraintlayout.widget.ConstraintLayout>
