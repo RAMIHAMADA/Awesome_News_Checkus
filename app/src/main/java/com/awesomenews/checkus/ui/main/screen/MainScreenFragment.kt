@@ -37,8 +37,8 @@ class MainScreenFragment : Fragment() {
                 navigateTo(infoModel)
             }
         })
-        binding.recyclerView.layoutManager = LinearLayoutManager(requireContext())
-        binding.recyclerView.adapter = adapter
+        binding.recyclerViewMainScreen.layoutManager = LinearLayoutManager(requireContext())
+        binding.recyclerViewMainScreen.adapter = adapter
 
         val list = mutableListOf(
             InfoModel(
