@@ -8,4 +8,5 @@
     <string name="news_topics_text">Разделы</string>
     <string name="main_screen_bottom_nav_menu">Главная</string>
     <string name="news_topics_bottom_nav_menu">Разделы</string>
+    <string name="all_news">Все новости</string>
 </resources>

@@ -108,7 +108,6 @@ class MainScreenFragment : Fragment() {
         findNavController().navigate(
             MainScreenFragmentDirections.actionMainScreenFragmentToDetailsNewsFragment(
                 newsDetalis = news_detalis
-
             )
         )
     }
