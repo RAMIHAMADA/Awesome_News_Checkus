@@ -1,5 +1,6 @@
 package com.awesomenews.checkus.ui.news.topics
 
+import android.content.Context
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -11,11 +12,15 @@ import androidx.recyclerview.widget.RecyclerView
 import com.awesomenews.checkus.adapters.TopicsNewsAdapter
 import com.awesomenews.checkus.databinding.FragmentNewsTopicsBinding
 import com.awesomenews.checkus.models.InfoModel
+import com.awesomenews.checkus.models.TitleModel
+import kotlinx.android.synthetic.main.item_new_topics_scroll_card.*
+import com.awesomenews.checkus.ui.news.topics.NewsTopicsFragment as NewsTopicsFragment1
 
 class NewsTopicsFragment : Fragment() {
-
-    private var topicsRecyclerView: RecyclerView? = null
+    private var newsTopicsCategoryRecycler: RecyclerView? = null
     private var topicsNewsAdapter: TopicsNewsAdapter? = null
+
+
     private var _binding: FragmentNewsTopicsBinding? = null
     private val binding get() = _binding!!
     override fun onCreateView(
@@ -25,35 +30,34 @@ class NewsTopicsFragment : Fragment() {
         _binding = FragmentNewsTopicsBinding.inflate(inflater, container, false)
         return binding.root
     }
+
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        val titleModel: MutableList<TitleModel> = ArrayList()
+        titleModel.add(TitleModel("Лучшая новость"))
+        titleModel.add(TitleModel("Самая лучшая новость"))
+        titleModel.add(TitleModel("Такая себе новость "))
+        titleModel.add(TitleModel("Можно было лучше"))
+        titleModel.add(TitleModel("Вот это я понимаю"))
+
+        setTopicsNewsCategoryRecycler(titleModel)
+
+    }
+
+    private fun setTopicsNewsCategoryRecycler(titleModel: List<TitleModel>){
+        newsTopicsCategoryRecycler = binding.recyclerViewNewsTopics
+        val layoutManager: RecyclerView.LayoutManager = LinearLayoutManager(this)
+        newsTopicsCategoryRecycler!!.layoutManager = layoutManager
+        topicsNewsAdapter = TopicsNewsAdapter(this, titleModel)
+        newsTopicsCategoryRecycler!!.adapter = topicsNewsAdapter
+
+
+    }
+
     override fun onDestroyView() {
         super.onDestroyView()
         _binding = null
     }
 
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-
-//        val allCategory: MutableList<InfoModel> = arrayListOf()
-//        allCategory.add(1, InfoModel("Новая новость"))
-//        allCategory.add(1, InfoModel("Старая новость"))
-//        allCategory.add(1, InfoModel("Крутая новость"))
-//        allCategory.add(1, InfoModel("Не крутая новость"))
-//        allCategory.add(1, InfoModel("Такая себе новость"))
-//        allCategory.add(1, InfoModel("Фейковая новость"))
-//        allCategory.add(1, InfoModel("Трушная новость"))
-//
-//        setMainTopicsNewCategory(allCategory)
-    }
-
-//    private fun setMainTopicsNewCategory(infoModel: InfoModel) {
-//        topicsRecyclerView = binding.recyclerViewNewsTopics
-//        val layoutManager: RecyclerView.LayoutManager = LinearLayoutManager(this)
-//        topicsRecyclerView!!.layoutManager = layoutManager
-//        topicsNewsAdapter = TopicsNewsAdapter(this,allCategory)
-//        topicsRecyclerView!!.adapter = topicsNewsAdapter
-//
-//
-//
-//    }
 
 }
