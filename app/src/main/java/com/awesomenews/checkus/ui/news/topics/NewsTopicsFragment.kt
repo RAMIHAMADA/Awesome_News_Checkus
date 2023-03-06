@@ -1,28 +1,22 @@
 package com.awesomenews.checkus.ui.news.topics
 
-import android.content.Context
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
-import androidx.lifecycle.MutableLiveData
 import androidx.recyclerview.widget.LinearLayoutManager
-import androidx.recyclerview.widget.RecyclerView
 import com.awesomenews.checkus.adapters.TopicsNewsAdapter
 import com.awesomenews.checkus.databinding.FragmentNewsTopicsBinding
-import com.awesomenews.checkus.models.InfoModel
 import com.awesomenews.checkus.models.TitleModel
-import kotlinx.android.synthetic.main.item_new_topics_scroll_card.*
-import com.awesomenews.checkus.ui.news.topics.NewsTopicsFragment as NewsTopicsFragment1
+
 
 class NewsTopicsFragment : Fragment() {
-    private var newsTopicsCategoryRecycler: RecyclerView? = null
-    private var topicsNewsAdapter: TopicsNewsAdapter? = null
 
-
+    private lateinit var adapter1: TopicsNewsAdapter
     private var _binding: FragmentNewsTopicsBinding? = null
     private val binding get() = _binding!!
+
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -31,33 +25,34 @@ class NewsTopicsFragment : Fragment() {
         return binding.root
     }
 
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        val titleModel: MutableList<TitleModel> = ArrayList()
-        titleModel.add(TitleModel("Лучшая новость"))
-        titleModel.add(TitleModel("Самая лучшая новость"))
-        titleModel.add(TitleModel("Такая себе новость "))
-        titleModel.add(TitleModel("Можно было лучше"))
-        titleModel.add(TitleModel("Вот это я понимаю"))
-
-        setTopicsNewsCategoryRecycler(titleModel)
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+        initAdapter()
 
     }
+    //todo  разобраться с инициализацией  в инитадаптаре, так как то что написано прямо сейчас не правильно
+    private fun initAdapter() {
+        adapter1 = TopicsNewsAdapter(object : TopicsNewsAdapter.Listener{
+            override fun onClickTitleModel(titleModel: TitleModel) {
 
-    private fun setTopicsNewsCategoryRecycler(titleModel: List<TitleModel>){
-        newsTopicsCategoryRecycler = binding.recyclerViewNewsTopics
-        val layoutManager: RecyclerView.LayoutManager = LinearLayoutManager(this)
-        newsTopicsCategoryRecycler!!.layoutManager = layoutManager
-        topicsNewsAdapter = TopicsNewsAdapter(this, titleModel)
-        newsTopicsCategoryRecycler!!.adapter = topicsNewsAdapter
+            }
+        })
+        binding.recyclerViewNewsTopics.layoutManager = LinearLayoutManager(requireContext())
+        binding.recyclerViewNewsTopics.adapter = adapter1
 
-
+        val list = mutableListOf(
+            TitleModel("Новости будут тут"),
+            TitleModel("Точно будут новости"),
+            TitleModel("Совсем скоро будут новости"),
+            TitleModel("Новости со всего мира"),
+            TitleModel("Локальные новости"),
+            TitleModel("Новости про тракторы")
+        )
+        adapter1.submitList(list)
     }
 
     override fun onDestroyView() {
         super.onDestroyView()
         _binding = null
     }
-
-
 }

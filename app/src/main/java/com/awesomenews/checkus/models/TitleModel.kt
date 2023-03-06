@@ -1,3 +1,7 @@
 package com.awesomenews.checkus.models
 
-data class TitleModel(var categoryTitle: String)
+import java.io.Serializable
+
+data class TitleModel(
+    var categoryTitle: String
+): Serializable

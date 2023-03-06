@@ -103,7 +103,7 @@ class MainScreenFragment : Fragment() {
         )
         adapter.submitList(list)
     }
-
+    // осуществлена навигация с фрагмента MainScreenFragment на DetailsNewsFragment
     private fun navigateTo(news_detalis: InfoModel) {
         findNavController().navigate(
             MainScreenFragmentDirections.actionMainScreenFragmentToDetailsNewsFragment(

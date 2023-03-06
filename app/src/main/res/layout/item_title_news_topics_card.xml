@@ -18,50 +18,38 @@
 
     <TextView
         android:id="@+id/title_item_news_topics_tv"
-        android:layout_width="match_parent"
+        android:gravity="center"
+        android:layout_width="wrap_content"
         android:layout_height="0dp"
-        android:layout_marginStart="15dp"
-        android:layout_marginTop="12dp"
-        android:layout_marginBottom="12dp"
+        android:layout_marginStart="20dp"
         android:textColor="@color/black"
-        android:textSize="18dp"
+        android:textSize="18sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="@id/title_of_topic_view"
-        app:layout_constraintEnd_toEndOf="@id/title_of_topic_view"
-        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="@id/title_of_topic_view"
         app:layout_constraintTop_toTopOf="@id/title_of_topic_view"
-        app:layout_constraintVertical_bias="1.0"
         tools:text="Тема новости" />
 
     <TextView
         android:id="@+id/all_news_tv"
         android:layout_width="wrap_content"
         android:layout_height="0dp"
-        android:layout_marginTop="12dp"
-        android:layout_marginBottom="12dp"
         android:text="@string/all_news"
-        android:textSize="14dp"
         android:textColor="@color/grey_date"
-        app:layout_constraintBottom_toBottomOf="@id/title_of_topic_view"
+        android:textSize="14sp"
+        app:layout_constraintTop_toTopOf="@id/arrow_navigate_next_iv"
+        app:layout_constraintBottom_toBottomOf="@id/arrow_navigate_next_iv"
         app:layout_constraintEnd_toStartOf="@id/arrow_navigate_next_iv"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toEndOf="@id/title_item_news_topics_tv"
-        app:layout_constraintTop_toTopOf="@id/title_of_topic_view" />
+        android:gravity="center"/>
 
     <ImageView
         android:id="@+id/arrow_navigate_next_iv"
         android:layout_width="wrap_content"
-        android:layout_height="0dp"
-        android:layout_marginTop="10dp"
-        android:layout_marginEnd="15dp"
-        android:layout_marginBottom="12dp"
-        android:background="@color/greyForFragment"
-        android:src="@drawable/ic_arrow_navigate_next"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="20dp"
+        android:src="@drawable/ic_baseline_navigate_next"
         app:layout_constraintBottom_toBottomOf="@id/title_of_topic_view"
         app:layout_constraintEnd_toEndOf="@id/title_of_topic_view"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toStartOf="@id/title_of_topic_view"
         app:layout_constraintTop_toTopOf="@id/title_of_topic_view" />
 
     <View
