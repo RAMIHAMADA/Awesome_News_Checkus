@@ -6,14 +6,13 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.awesomenews.checkus.adapters.TopicsNewsAdapter
+import com.awesomenews.checkus.adapters.CategoryNewsAdapter
 import com.awesomenews.checkus.databinding.FragmentNewsTopicsBinding
-import com.awesomenews.checkus.models.TitleModel
+import com.awesomenews.checkus.utils.GetNews
 
 
 class NewsTopicsFragment : Fragment() {
-
-    private lateinit var adapter1: TopicsNewsAdapter
+    private lateinit var adapter: CategoryNewsAdapter
     private var _binding: FragmentNewsTopicsBinding? = null
     private val binding get() = _binding!!
 
@@ -28,28 +27,14 @@ class NewsTopicsFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         initAdapter()
-
     }
-    //todo  разобраться с инициализацией  в инитадаптаре, так как то что написано прямо сейчас не правильно
-    private fun initAdapter() {
-        adapter1 = TopicsNewsAdapter(object : TopicsNewsAdapter.Listener{
-            override fun onClickTitleModel(titleModel: TitleModel) {
-
-            }
-        })
+    private fun initAdapter(){
+        adapter = CategoryNewsAdapter()
+        adapter.category = GetNews.getCategoryNewsList()
         binding.recyclerViewNewsTopics.layoutManager = LinearLayoutManager(requireContext())
-        binding.recyclerViewNewsTopics.adapter = adapter1
-
-        val list = mutableListOf(
-            TitleModel("Новости будут тут"),
-            TitleModel("Точно будут новости"),
-            TitleModel("Совсем скоро будут новости"),
-            TitleModel("Новости со всего мира"),
-            TitleModel("Локальные новости"),
-            TitleModel("Новости про тракторы")
-        )
-        adapter1.submitList(list)
+        binding.recyclerViewNewsTopics.adapter = adapter
     }
+
 
     override fun onDestroyView() {
         super.onDestroyView()

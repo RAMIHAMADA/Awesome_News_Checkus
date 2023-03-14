@@ -8,9 +8,5 @@
     <fragment
         android:id="@+id/newsTopicsFragment"
         android:name="com.awesomenews.checkus.ui.news.topics.NewsTopicsFragment"
-        android:label="NewsTopicsFragment" >
-        <argument
-            android:name="title_news_topics"
-            app:argType="com.awesomenews.checkus.models.TitleModel" />
-    </fragment>
+        android:label="NewsTopicsFragment" />
 </navigation>

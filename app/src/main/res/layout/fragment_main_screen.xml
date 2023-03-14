@@ -10,18 +10,18 @@
         android:id="@+id/view_container_for_name_ic"
         android:layout_width="match_parent"
         android:layout_height="50dp"
-        app:layout_constraintStart_toStartOf="parent"
+        android:background="@color/white"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        android:background="@color/white">
-    </View>
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"></View>
+
     <TextView
         android:id="@+id/main_screen_text"
         android:layout_width="match_parent"
         android:layout_height="50dp"
+        android:layout_marginStart="16dp"
         android:layout_marginTop="11dp"
         android:layout_marginBottom="17dp"
-        android:layout_marginStart="16dp"
         android:text="@string/main_screen_text"
         android:textColor="@color/black"
         android:textSize="24dp"
@@ -35,11 +35,11 @@
         android:id="@+id/recycler_view_main_screen"
         android:layout_width="wrap_content"
         android:layout_height="0dp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
         app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/view_container_for_name_ic"
-        tools:listitem="@layout/item_card_news"
-        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"/>
+        tools:listitem="@layout/item_card_news" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
