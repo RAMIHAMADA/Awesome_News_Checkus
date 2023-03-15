@@ -5,23 +5,65 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content">
 
-    <TextView
-        android:id="@+id/title_tv"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+    <View
+        android:id="@+id/view_box_v"
+        android:layout_width="wrap_content"
+        android:layout_height="50dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        tools:text="Четко" />
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:textSize="18dp"
+        android:layout_marginStart="15dp"
+        android:textColor="@color/black"
+        android:id="@+id/title_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@id/view_box_v"
+        app:layout_constraintStart_toStartOf="@id/view_box_v"
+        app:layout_constraintTop_toTopOf="@id/view_box_v"
+        tools:text="Тут будет новость" />
+
+    <TextView
+        android:id="@+id/all_news_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="8dp"
+        android:text="@string/all_news"
+        android:textSize="14dp"
+        app:layout_constraintBottom_toBottomOf="@id/view_box_v"
+        app:layout_constraintEnd_toStartOf="@id/background_for_arrow_v"
+        app:layout_constraintTop_toTopOf="@id/view_box_v"/>
+
+    <ImageView
+        android:id="@+id/arrow_next_pages_iv"
+        android:layout_marginEnd="17dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="@id/view_box_v"
+        app:layout_constraintBottom_toBottomOf="@id/view_box_v"
+        app:layout_constraintEnd_toEndOf="@id/view_box_v"
+        android:src="@drawable/ic_baseline_navigate_next"/>
+    <View
+        android:id="@+id/background_for_arrow_v"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintStart_toStartOf="@id/arrow_next_pages_iv"
+        app:layout_constraintEnd_toEndOf="@id/arrow_next_pages_iv"
+        app:layout_constraintBottom_toBottomOf="@id/arrow_next_pages_iv"
+        app:layout_constraintTop_toTopOf="@id/arrow_next_pages_iv"/>
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recycler_view"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_height="0dp"
         android:orientation="horizontal"
+        tools:listitem="@layout/item_news"
         app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/title_tv" />
+        app:layout_constraintTop_toBottomOf="@id/view_box_v" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

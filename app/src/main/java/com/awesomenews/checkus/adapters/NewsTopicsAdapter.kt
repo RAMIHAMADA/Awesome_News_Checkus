@@ -8,6 +8,7 @@ import com.awesomenews.checkus.R
 import com.awesomenews.checkus.databinding.ItemNewsBinding
 import com.awesomenews.checkus.models.CategoryNewsModel
 import com.awesomenews.checkus.models.InfoModel
+import kotlinx.android.synthetic.main.item_news.view.*
 
 class NewsTopicsAdapter() : RecyclerView.Adapter<NewsTopicsAdapter.NewsTopicsViewHolder>() {
     var news: List<InfoModel> = emptyList()
@@ -15,6 +16,7 @@ class NewsTopicsAdapter() : RecyclerView.Adapter<NewsTopicsAdapter.NewsTopicsVie
             field = newValue
             notifyDataSetChanged()
         }
+
     class NewsTopicsViewHolder(val binding: ItemNewsBinding) :
         RecyclerView.ViewHolder(binding.root)
 
@@ -27,7 +29,10 @@ class NewsTopicsAdapter() : RecyclerView.Adapter<NewsTopicsAdapter.NewsTopicsVie
 
     override fun onBindViewHolder(holder: NewsTopicsViewHolder, position: Int) {
         val news = news[position]
-        with(holder.binding){
+        with(holder.binding) {
+            root.tag = news
+            titleNewsTv.text = news.title
+            dateNewsTv.text = news.date_added.toString()
             if (news.imageLink.isEmpty()) {
                 pictureIv.setImageResource(R.drawable.ic_news_download)
             } else {
