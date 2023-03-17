@@ -31,7 +31,7 @@ class DetailsNewsFragment : Fragment() {
         transferInfo()
         initClickArrowBack()
     }
-// todo   findNavController().navigateUp()
+
 
     private fun initClickArrowBack(){
         binding.backgroundForArrowV.setOnClickListener {

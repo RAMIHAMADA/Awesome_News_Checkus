@@ -13,7 +13,9 @@
         android:background="@color/white"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"></View>
+        app:layout_constraintTop_toTopOf="parent">
+
+    </View>
 
     <TextView
         android:id="@+id/main_screen_text"

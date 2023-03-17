@@ -11,17 +11,12 @@ import com.awesomenews.checkus.R
 import com.awesomenews.checkus.databinding.ItemCardNewsBinding
 import com.awesomenews.checkus.models.InfoModel
 
-
-class CardNewsAdapter(private val listener: Listener) :
+class CardNewsAdapter(private val listener:(InfoModel)-> Unit) :
     ListAdapter<InfoModel, CardNewsAdapter.CardNewsViewHolder>(ItemCallBack),
     View.OnClickListener {
 
     class CardNewsViewHolder(val binding: ItemCardNewsBinding) :
         RecyclerView.ViewHolder(binding.root)
-
-    interface Listener {
-        fun onClickInfoModel(infoModel: InfoModel)
-    }
 
     object ItemCallBack : DiffUtil.ItemCallback<InfoModel>() {
 
@@ -63,6 +58,6 @@ class CardNewsAdapter(private val listener: Listener) :
 
     override fun onClick(view: View) {
         val newsCard = view.tag as InfoModel
-        listener.onClickInfoModel(newsCard)
+        listener(newsCard)
     }
 }

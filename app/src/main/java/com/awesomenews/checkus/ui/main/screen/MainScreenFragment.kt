@@ -31,13 +31,11 @@ class MainScreenFragment : Fragment() {
         initAdapter()
     }
 
-
     private fun initAdapter() {
-        adapter = CardNewsAdapter(object : CardNewsAdapter.Listener {
-            override fun onClickInfoModel(infoModel: InfoModel) {
-                navigateTo(infoModel)
-            }
-        })
+        adapter = CardNewsAdapter {
+            navigateTo(it)
+        }
+
         binding.recyclerViewMainScreen.layoutManager = LinearLayoutManager(requireContext())
         binding.recyclerViewMainScreen.adapter = adapter
 

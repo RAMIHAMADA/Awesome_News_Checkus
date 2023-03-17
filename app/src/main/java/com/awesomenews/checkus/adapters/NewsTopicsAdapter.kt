@@ -1,14 +1,14 @@
 package com.awesomenews.checkus.adapters
 
+import android.util.Log
 import android.view.LayoutInflater
+import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import coil.load
 import com.awesomenews.checkus.R
 import com.awesomenews.checkus.databinding.ItemNewsBinding
-import com.awesomenews.checkus.models.CategoryNewsModel
 import com.awesomenews.checkus.models.InfoModel
-import kotlinx.android.synthetic.main.item_news.view.*
 
 class NewsTopicsAdapter() : RecyclerView.Adapter<NewsTopicsAdapter.NewsTopicsViewHolder>() {
     var news: List<InfoModel> = emptyList()
@@ -16,6 +16,7 @@ class NewsTopicsAdapter() : RecyclerView.Adapter<NewsTopicsAdapter.NewsTopicsVie
             field = newValue
             notifyDataSetChanged()
         }
+
 
     class NewsTopicsViewHolder(val binding: ItemNewsBinding) :
         RecyclerView.ViewHolder(binding.root)
@@ -44,4 +45,7 @@ class NewsTopicsAdapter() : RecyclerView.Adapter<NewsTopicsAdapter.NewsTopicsVie
     }
 
     override fun getItemCount() = news.size
+
+
+
 }

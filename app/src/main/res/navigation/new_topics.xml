@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <navigation xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/new_topics"
     app:startDestination="@id/newsTopicsFragment">
 
@@ -8,5 +9,18 @@
     <fragment
         android:id="@+id/newsTopicsFragment"
         android:name="com.awesomenews.checkus.ui.news.topics.NewsTopicsFragment"
-        android:label="NewsTopicsFragment" />
+        android:label="NewsTopicsFragment" >
+        <action
+            android:id="@+id/action_newsTopicsFragment_to_listOfAllNewsFragment"
+            app:destination="@id/listOfAllNewsFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/listOfAllNewsFragment"
+        android:name="com.awesomenews.checkus.ui.list.of.all.news.ListOfAllNewsFragment"
+        android:label="fragment_list_of_all_news"
+        tools:layout="@layout/fragment_list_of_all_news" >
+        <argument
+            android:name="category_name"
+            app:argType="string" />
+    </fragment>
 </navigation>
