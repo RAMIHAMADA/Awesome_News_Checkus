@@ -11,6 +11,10 @@
         <action
             android:id="@+id/action_mainScreenFragment_to_detailsNewsFragment"
             app:destination="@id/detailsNewsFragment"
+            app:enterAnim="@android:anim/slide_in_left"
+            app:exitAnim="@android:anim/slide_out_right"
+            app:popEnterAnim="@android:anim/slide_in_left"
+            app:popExitAnim="@android:anim/slide_out_right"
             app:popUpToInclusive="false" />
     </fragment>
     <fragment

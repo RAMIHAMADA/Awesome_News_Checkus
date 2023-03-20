@@ -3,24 +3,45 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/new_topics"
+    android:label="fragment_details_news"
     app:startDestination="@id/newsTopicsFragment">
 
 
     <fragment
         android:id="@+id/newsTopicsFragment"
         android:name="com.awesomenews.checkus.ui.news.topics.NewsTopicsFragment"
-        android:label="NewsTopicsFragment" >
+        android:label="NewsTopicsFragment">
         <action
             android:id="@+id/action_newsTopicsFragment_to_listOfAllNewsFragment"
-            app:destination="@id/listOfAllNewsFragment" />
+            app:destination="@id/listOfAllNewsFragment"
+            app:enterAnim="@android:anim/slide_in_left"
+            app:exitAnim="@android:anim/slide_out_right"
+            app:popEnterAnim="@android:anim/slide_in_left"
+            app:popExitAnim="@android:anim/slide_out_right" />
     </fragment>
     <fragment
         android:id="@+id/listOfAllNewsFragment"
         android:name="com.awesomenews.checkus.ui.list.of.all.news.ListOfAllNewsFragment"
         android:label="fragment_list_of_all_news"
-        tools:layout="@layout/fragment_list_of_all_news" >
+        tools:layout="@layout/fragment_list_of_all_news">
         <argument
             android:name="category_name"
-            app:argType="string" />
+            app:argType="com.awesomenews.checkus.models.CategoryNewsModel" />
+        <action
+            android:id="@+id/action_listOfAllNewsFragment_to_detailsNewsFragment2"
+            app:destination="@id/detailsNewsFragment"
+            app:enterAnim="@android:anim/slide_in_left"
+            app:exitAnim="@android:anim/slide_out_right"
+            app:popEnterAnim="@android:anim/slide_in_left"
+            app:popExitAnim="@android:anim/slide_out_right" />
+    </fragment>
+    <fragment
+        android:id="@+id/detailsNewsFragment"
+        android:name="com.awesomenews.checkus.ui.details.news.DetailsNewsFragment"
+        android:label="fragment_details_news"
+        tools:layout="@layout/fragment_details_news">
+        <argument
+            android:name="news_detalis"
+            app:argType="com.awesomenews.checkus.models.InfoModel" />
     </fragment>
 </navigation>

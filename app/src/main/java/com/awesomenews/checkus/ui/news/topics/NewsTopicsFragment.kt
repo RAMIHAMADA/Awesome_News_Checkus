@@ -1,7 +1,6 @@
 package com.awesomenews.checkus.ui.news.topics
 
 import android.os.Bundle
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -36,21 +35,28 @@ class NewsTopicsFragment : Fragment() {
 
     private fun initAdapter() {
         adapter = CategoryNewsAdapter{
-            Toast.makeText(requireContext(), it.categoryTitle, Toast.LENGTH_SHORT).show()
+//            Toast.makeText(requireContext(), it.categoryTitle, Toast.LENGTH_SHORT).show()
+            navigateTo(it)
         }
         adapter.category = GetNews.getCategoryNewsList()
 
         binding.recyclerViewNewsTopics.layoutManager = LinearLayoutManager(requireContext())
         binding.recyclerViewNewsTopics.adapter = adapter
+
+        adapter.category
+
     }
 
-//    private fun navigateTo(category_name: String) {
-//        findNavController().navigate(
-//            NewsTopicsFragmentDirections.actionNewsTopicsFragmentToListOfAllNewsFragment(
-//                 categoryName = category_name
-//            )
-//        )
-//    }
+    private fun navigateTo(category_name: CategoryNewsModel){
+        findNavController().navigate(
+            NewsTopicsFragmentDirections.actionNewsTopicsFragmentToListOfAllNewsFragment(
+                categoryName = category_name
+            )
+        )
+
+    }
+
+
 
 
 

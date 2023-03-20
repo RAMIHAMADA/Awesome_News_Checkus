@@ -1,6 +1,6 @@
 package com.awesomenews.checkus.ui.main.screen
 
-import android.icu.text.IDNA
+
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View

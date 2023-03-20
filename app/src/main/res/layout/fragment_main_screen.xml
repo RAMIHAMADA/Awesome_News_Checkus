@@ -26,8 +26,8 @@
         android:layout_marginBottom="17dp"
         android:text="@string/main_screen_text"
         android:textColor="@color/black"
-        android:textSize="24dp"
         android:textStyle="bold"
+        android:textSize="24dp"
         app:layout_constraintEnd_toEndOf="@id/view_container_for_name_ic"
         app:layout_constraintStart_toStartOf="@id/view_container_for_name_ic"
         app:layout_constraintTop_toTopOf="@id/view_container_for_name_ic" />
