@@ -1,5 +1,6 @@
 package com.awesomenews.checkus.utils
 
+import com.awesomenews.checkus.data.GettingData
 import com.awesomenews.checkus.models.CategoryNewsModel
 import com.awesomenews.checkus.models.InfoModel
 

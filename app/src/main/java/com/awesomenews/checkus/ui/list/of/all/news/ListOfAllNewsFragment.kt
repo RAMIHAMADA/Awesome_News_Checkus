@@ -9,6 +9,7 @@ import androidx.navigation.fragment.findNavController
 import androidx.navigation.fragment.navArgs
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.awesomenews.checkus.adapters.CardNewsAdapter
+import com.awesomenews.checkus.data.GettingData
 import com.awesomenews.checkus.databinding.FragmentListOfAllNewsBinding
 import com.awesomenews.checkus.models.InfoModel
 import com.awesomenews.checkus.utils.GetNews

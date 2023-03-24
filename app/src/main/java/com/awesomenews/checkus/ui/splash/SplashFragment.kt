@@ -9,6 +9,7 @@ import androidx.fragment.app.Fragment
 import androidx.lifecycle.lifecycleScope
 import androidx.navigation.fragment.findNavController
 import com.awesomenews.checkus.R
+import com.awesomenews.checkus.data.GettingData
 import com.awesomenews.checkus.databinding.FragmentSplashBinding
 import kotlinx.coroutines.*
 
@@ -24,6 +25,9 @@ class SplashFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        lifecycleScope.launch(Dispatchers.IO){
+            GettingData
+        }
         navigateNext()
     }
 

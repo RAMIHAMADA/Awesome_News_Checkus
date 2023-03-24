@@ -5,13 +5,11 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
-import androidx.navigation.findNavController
 import androidx.navigation.fragment.findNavController
 import androidx.navigation.fragment.navArgs
 import coil.load
 import com.awesomenews.checkus.R
 import com.awesomenews.checkus.databinding.FragmentDetailsNewsBinding
-import kotlinx.android.synthetic.main.fragment_details_news.*
 
 class DetailsNewsFragment : Fragment() {
     private var _binding: FragmentDetailsNewsBinding? = null
@@ -31,6 +29,7 @@ class DetailsNewsFragment : Fragment() {
         transferInfo()
         initClickArrowBack()
     }
+
 
 
     private fun initClickArrowBack(){
