@@ -6,7 +6,7 @@ import kotlinx.android.parcel.Parcelize
 @Parcelize
 data class InfoModel(
     val title: String? = "",
-    val imageLink: String = "",
+    val image: String = "",
     val date_added: Long = 0L,
     val text: String? = "",
 ): Parcelable

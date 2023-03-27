@@ -42,10 +42,10 @@ class DetailsNewsFragment : Fragment() {
         binding.titleDetalisFragmentTv.text = args.newsDetalis.title
         binding.dateDetalisFragmentTv.text = args.newsDetalis.date_added.toString()
         binding.textDetalisNewsFragment.text = args.newsDetalis.text
-        if (args.newsDetalis.imageLink?.isEmpty()!!) {
+        if (args.newsDetalis.image?.isEmpty()!!) {
             binding.detalisNewsFragmentIv.setImageResource(R.drawable.ic_news_download)
         } else {
-            binding.detalisNewsFragmentIv.load(args.newsDetalis.imageLink) {
+            binding.detalisNewsFragmentIv.load(args.newsDetalis.image) {
                 placeholder(R.drawable.ic_news_download)
             }
         }

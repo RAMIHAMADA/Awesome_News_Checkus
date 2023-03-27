@@ -46,10 +46,10 @@ class CardNewsAdapter(private val listener:(InfoModel)-> Unit) :
 
             dateNewsTv.text = news.date_added.toString()
             titleNewsTv.text = news.title
-            if (news.imageLink?.isEmpty()!!) {
+            if (news.image?.isEmpty()!!) {
                 pictureIv.setImageResource(R.drawable.ic_news_download)
             } else {
-                pictureIv.load(news.imageLink) {
+                pictureIv.load(news.image) {
                     placeholder(R.drawable.ic_news_download)
                 }
             }

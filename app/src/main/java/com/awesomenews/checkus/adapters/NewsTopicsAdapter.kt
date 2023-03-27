@@ -1,8 +1,6 @@
 package com.awesomenews.checkus.adapters
 
-import android.util.Log
 import android.view.LayoutInflater
-import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import coil.load
@@ -34,10 +32,10 @@ class NewsTopicsAdapter() : RecyclerView.Adapter<NewsTopicsAdapter.NewsTopicsVie
             root.tag = news
             titleNewsTv.text = news.title
             dateNewsTv.text = news.date_added.toString()
-            if (news.imageLink.isEmpty()) {
+            if (news.image.isEmpty()) {
                 pictureIv.setImageResource(R.drawable.ic_news_download)
             } else {
-                pictureIv.load(news.imageLink) {
+                pictureIv.load(news.image) {
                     placeholder(R.drawable.ic_news_download)
                 }
             }

@@ -10,28 +10,28 @@ object GettingData {
     //    82gD6xxvPgPDifhDK3Uy   work
     init {
         Log.e("COP", "init" )
-//        initDataBase()
-        save()
+        initDataBase()
+//        save()
     }
 
-    fun save(){
-        val db = Firebase.firestore
-        db.collection("test").add("test").addOnSuccessListener {
-
-        }
-
-    }    }
-
-//    fun initDataBase() {
-//        val dataBase =
-//            Firebase.firestore.collection("types")
-//        dataBase.get().addOnSuccessListener {
-//            for (news in it ) {
-//                Log.d("COP", "DocumentSnapshot data: ${it}")
-//            }
+//    fun save(){
+//        val db = Firebase.firestore
+//        db.collection("test").add("test").addOnSuccessListener {
+//
 //        }
-//    }
-//}
+//
+//    }    }
+
+    fun initDataBase() {
+        val dataBase =
+            Firebase.firestore.collection("types")
+        dataBase.get().addOnSuccessListener {
+            for (news in it ) {
+                Log.d("COP", "DocumentSnapshot data: ${it}")
+            }
+        }
+    }
+}
 
 
 //    val newsModelListener = object : ValueEventListener{
