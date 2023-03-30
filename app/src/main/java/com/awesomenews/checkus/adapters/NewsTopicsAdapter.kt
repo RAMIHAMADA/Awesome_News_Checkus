@@ -1,5 +1,6 @@
 package com.awesomenews.checkus.adapters
 
+import android.annotation.SuppressLint
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
@@ -7,6 +8,7 @@ import coil.load
 import com.awesomenews.checkus.R
 import com.awesomenews.checkus.databinding.ItemNewsBinding
 import com.awesomenews.checkus.models.InfoModel
+import java.text.SimpleDateFormat
 
 class NewsTopicsAdapter() : RecyclerView.Adapter<NewsTopicsAdapter.NewsTopicsViewHolder>() {
     var news: List<InfoModel> = emptyList()
@@ -31,7 +33,7 @@ class NewsTopicsAdapter() : RecyclerView.Adapter<NewsTopicsAdapter.NewsTopicsVie
         with(holder.binding) {
             root.tag = news
             titleNewsTv.text = news.title
-            dateNewsTv.text = news.date_added.toString()
+            dateNewsTv.text = convertLongToTime(news.date_added)
             if (news.image.isEmpty()) {
                 pictureIv.setImageResource(R.drawable.ic_news_download)
             } else {
@@ -40,6 +42,13 @@ class NewsTopicsAdapter() : RecyclerView.Adapter<NewsTopicsAdapter.NewsTopicsVie
                 }
             }
         }
+    }
+
+    @SuppressLint("SimpleDateFormat")
+    fun convertLongToTime(time:Long): String{
+        val dateNews = java.sql.Date(time)
+        val format = SimpleDateFormat("yyyy.MM.dd HH:mm")
+        return format.format(dateNews)
     }
 
     override fun getItemCount() = news.size

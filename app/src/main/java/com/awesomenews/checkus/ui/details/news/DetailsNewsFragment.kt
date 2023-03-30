@@ -1,5 +1,6 @@
 package com.awesomenews.checkus.ui.details.news
 
+import android.annotation.SuppressLint
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -10,6 +11,7 @@ import androidx.navigation.fragment.navArgs
 import coil.load
 import com.awesomenews.checkus.R
 import com.awesomenews.checkus.databinding.FragmentDetailsNewsBinding
+import java.text.SimpleDateFormat
 
 class DetailsNewsFragment : Fragment() {
     private var _binding: FragmentDetailsNewsBinding? = null
@@ -40,7 +42,7 @@ class DetailsNewsFragment : Fragment() {
 
     private fun transferInfo() {
         binding.titleDetalisFragmentTv.text = args.newsDetalis.title
-        binding.dateDetalisFragmentTv.text = args.newsDetalis.date_added.toString()
+        binding.dateDetalisFragmentTv.text = convertLongToTime(args.newsDetalis.date_added)
         binding.textDetalisNewsFragment.text = args.newsDetalis.text
         if (args.newsDetalis.image?.isEmpty()!!) {
             binding.detalisNewsFragmentIv.setImageResource(R.drawable.ic_news_download)
@@ -49,6 +51,12 @@ class DetailsNewsFragment : Fragment() {
                 placeholder(R.drawable.ic_news_download)
             }
         }
+    }
+    @SuppressLint("SimpleDateFormat")
+    fun convertLongToTime(time:Long): String{
+        val dateNews = java.sql.Date(time)
+        val format = SimpleDateFormat("yyyy.MM.dd HH:mm")
+        return format.format(dateNews)
     }
 
     override fun onDestroyView() {
