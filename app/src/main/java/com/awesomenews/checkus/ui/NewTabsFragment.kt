@@ -10,13 +10,13 @@ import androidx.navigation.ui.NavigationUI
 import com.awesomenews.checkus.R
 import com.awesomenews.checkus.databinding.FragmentNewTabsBinding
 
-class NewTabsFragment: Fragment() {
+class NewTabsFragment : Fragment() {
     private var _binding: FragmentNewTabsBinding? = null
     private val binding get() = _binding!!
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
-        savedInstanceState: Bundle?
+        savedInstanceState: Bundle?,
     ): View {
         _binding = FragmentNewTabsBinding.inflate(inflater, container, false)
         return binding.root
@@ -27,8 +27,8 @@ class NewTabsFragment: Fragment() {
         initNavigation()
     }
 
-    private fun initNavigation(){
-        val navHost=
+    private fun initNavigation() {
+        val navHost =
             childFragmentManager.findFragmentById(R.id.new_tabs_fragment_container) as NavHostFragment
         val navController = navHost.navController
 
